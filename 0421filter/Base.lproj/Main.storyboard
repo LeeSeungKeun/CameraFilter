@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_421filter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fBa-dL-Fxr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2uJ-FT-Zqk" appends="YES" id="X9b-nQ-ddv"/>
+                                    <outletCollection property="gestureRecognizers" destination="QH8-Dw-TBP" appends="YES" id="c2v-cP-tFP"/>
+                                </connections>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sSX-lc-gFS">
+                                <rect key="frame" x="139.5" y="69" width="135" height="32"/>
+                                <segments>
+                                    <segment title="Original"/>
+                                    <segment title="Filterd"/>
+                                </segments>
+                                <connections>
+                                    <action selector="typeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="v6a-s9-Fin"/>
+                                </connections>
+                            </segmentedControl>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipp-Qo-tpT">
+                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xpW-0W-IMd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BBd-3e-hTx"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="vS5-P4-fmj">
+                                <rect key="frame" x="0.0" y="796" width="414" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPs-zf-SJd">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="66"/>
+                                        <state key="normal" title="Camrea"/>
+                                        <connections>
+                                            <action selector="takeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GSG-0i-HCZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGr-Ly-8sQ">
+                                        <rect key="frame" x="227" y="0.0" width="187" height="66"/>
+                                        <state key="normal" title="Album"/>
+                                        <connections>
+                                            <action selector="pickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7kA-ew-G2X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vS5-P4-fmj" secondAttribute="bottom" id="1Yt-Ip-wEY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vS5-P4-fmj" secondAttribute="trailing" id="Hh8-6G-xPF"/>
+                            <constraint firstAttribute="trailing" secondItem="fBa-dL-Fxr" secondAttribute="trailing" id="Iqh-aL-rpd"/>
+                            <constraint firstAttribute="bottom" secondItem="ipp-Qo-tpT" secondAttribute="bottom" id="KRD-7y-ZK0"/>
+                            <constraint firstAttribute="bottom" secondItem="fBa-dL-Fxr" secondAttribute="bottom" id="QRU-Fh-dQz"/>
+                            <constraint firstItem="vS5-P4-fmj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TBS-Bm-ZHR"/>
+                            <constraint firstItem="fBa-dL-Fxr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZPT-8w-8vo"/>
+                            <constraint firstItem="vS5-P4-fmj" firstAttribute="top" secondItem="ipp-Qo-tpT" secondAttribute="top" id="dmK-Pt-0YM"/>
+                            <constraint firstItem="sSX-lc-gFS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gLB-Ub-dKn"/>
+                            <constraint firstItem="sSX-lc-gFS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="pK1-qC-kNW"/>
+                            <constraint firstItem="ipp-Qo-tpT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sgr-xg-Gxr"/>
+                            <constraint firstItem="ipp-Qo-tpT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uet-D1-B4h"/>
+                            <constraint firstItem="fBa-dL-Fxr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vk6-tN-ZG4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="fBa-dL-Fxr" id="nq9-hK-IO4"/>
+                        <outlet property="seuge" destination="sSX-lc-gFS" id="ru1-WD-mD1"/>
+                        <outlet property="take" destination="JPs-zf-SJd" id="wsT-Z6-tvm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="2uJ-FT-Zqk">
+                    <connections>
+                        <action selector="handleLongPress:" destination="BYZ-38-t0r" id="J3e-qt-dvi"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="QH8-Dw-TBP">
+                    <connections>
+                        <action selector="handledoubleTab:" destination="BYZ-38-t0r" id="x8t-i6-bGA"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+        </scene>
+    </scenes>
+</document>
